@@ -11,7 +11,11 @@ const bookingsRoute = require("./routes/bookingsRoute");
 // Middleware
 app.use(express.json());
 app.use(cors());
-
+app.use(
+  cors({
+    origin: "https://soltoshotel.onrender.com",
+  }),
+);
 // Routes
 app.get("/", (req, res) => res.send("hotel api confirmation"));
 app.use("/api/rooms", roomsRoute);
